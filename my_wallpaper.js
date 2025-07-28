@@ -31,7 +31,7 @@ noStroke()
 
 fill(255) //White 
 noStroke()
- rect(130, 40, 60, 40)
+ ellipse(70, 160, 100, 40)
 
 fill(190, 30, 45,) //Red 
 noStroke()
