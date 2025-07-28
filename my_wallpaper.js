@@ -35,6 +35,6 @@ noStroke()
 
 fill(190, 30, 45,) //Red 
 noStroke()
- triangle (75, 140, 130, 40, 130, 140 )
+ triangle (75, 140, 130, 40, 130, 140)
 
 }
