@@ -21,20 +21,20 @@ function wallpaper_background() {
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
 
 
-fill(255, 222, 23) //Yellow
+fill(255, 212, 23) //Yellow
 noStroke()
-rect(10, 40, 60, 40);
+ rect(10, 40, 65, 100);
 
-fill(33, 64, 154)
+fill(33, 64, 154) //Blue
 noStroke()
-circle(100, 60, 40);
+ circle(95.5, 60, 40.5);
 
-fill(255)
+fill(255) //White 
 noStroke()
-rect(130, 40, 60, 40)
+ rect(130, 40, 60, 40)
 
-fill(190, 30, 45)
+fill(190, 30, 45,) //Red 
 noStroke()
-triangle (75, 140, 100, 90, 125, 140 )
+ triangle (75, 140, 130, 40, 130, 140 )
 
 }
