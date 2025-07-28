@@ -1,11 +1,9 @@
 //your parameter variables go here!
-var wheelSize = 22 //22
-var rectCorner = 4 //4
-var wheelHeightX = 130 //130
+
 
 function setup_wallpaper(pWallpaper) {
-  //pWallpaper.output_mode(DEVELOP_GLYPH);
-  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.output_mode(DEVELOP_GLYPH);
+  //pWallpaper.output_mode(GRID_WALLPAPER);
   
   pWallpaper.resolution(FIT_TO_SCREEN);
   pWallpaper.show_guide(true); //set this to false when you're ready to print
@@ -17,33 +15,26 @@ function setup_wallpaper(pWallpaper) {
 }
 
 function wallpaper_background() {
-  background(242, 215, 155); //light honeydew green colour
+  background(230, 223, 204); //Beige 
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
 
-  //rect(40 ,40, rect_width, rect_height);
 
+fill(255, 222, 23) //Yellow
+noStroke()
+rect(10, 40, 60, 40);
 
-    // Car body
-    strokeWeight(1)
-   fill(255, 0, 0); // red
-  rect(40, 100, 120, 30, rectCorner*4, rectCorner+2, rectCorner, rectCorner);
+fill(33, 64, 154)
+noStroke()
+circle(100, 60, 40);
 
-  // Car top
-  strokeWeight(1)
-  fill(167, 238, 252,); // light blue
-  rect(65, 80, 90, 25, rectCorner*4, rectCorner*7, rectCorner, rectCorner);
+fill(255)
+noStroke()
+rect(130, 40, 60, 40)
 
-  // Wheels
-  fill(0); // black
-  ellipse(60, wheelHeightX, wheelSize);  // front wheel
-  ellipse(140, wheelHeightX, wheelSize); // rear wheel
-
-//Hub caps 
-fill(200); // black
-  ellipse(60, wheelHeightX, wheelSize/1.5);  // front wheel
-  ellipse(140, wheelHeightX, wheelSize/1.5); // rear wheel
-
+fill(190, 30, 45)
+noStroke()
+triangle (75, 140, 100, 90, 125, 140 )
 
 }
