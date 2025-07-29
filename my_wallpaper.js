@@ -2,12 +2,6 @@
 var smallstroke = 0.4
 var bigstroke = 1
 
-
-
-
-
-
-
 function setup_wallpaper(pWallpaper) {
 pWallpaper.output_mode(DEVELOP_GLYPH);
  //pWallpaper.output_mode(GRID_WALLPAPER);
@@ -18,7 +12,7 @@ pWallpaper.output_mode(DEVELOP_GLYPH);
   //Grid settings
   pWallpaper.grid_settings.cell_width  = 200;
   pWallpaper.grid_settings.cell_height = 200;
-  pWallpaper.grid_settings.row_offset  = 0;
+  pWallpaper.grid_settings.row_offset  = 150;
 }
 
 function wallpaper_background() {
@@ -69,7 +63,7 @@ square(160, 145, 15)
 noFill()
 stroke(0)  
 strokeWeight(smallstroke)
-fill(190, 30, 45,) //Red 
+fill(190, 30, 45) //Red 
 arc(135, 80, 80 , 80, 0, 180, PIE )
 fill(255, 212, 23,) //Yellow
 arc(95, 160, 90, 100, 270, 0, PIE)
