@@ -93,6 +93,21 @@ strokeWeight(ss)
 
 }
 
+
+
+
+
+
+
+
+
+
+
+
+//Functions
+
+
+
 function DrawPacEatTri(){
 
 fill(red)
