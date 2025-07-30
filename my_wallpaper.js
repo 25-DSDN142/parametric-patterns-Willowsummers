@@ -2,17 +2,16 @@
 
 let ss = 0.4 // 0.4
 
-let triX = 55; //55
-let triY = 90; //90
+let triX = 35; //55
+let triY = 60; //90
+
+let squareX = 95; //95
+let squareY = 80; //80
 
 let rectX = 140;
 let rectY = 120;
 let rectW = 50;
 let rectH = 70;
-
-let squareX = 95;
-let squareY = 80;
-let squaresize = 80;
 
 let arcw = 80;
 let arcH = 70;
@@ -22,6 +21,12 @@ let ellipseH = 30;
 
 let circleSize = 33;
 
+// Color variables
+let red = [190, 30, 45];
+let yellow = [255,212,23];
+let blue = [33, 64, 154];
+let white = [255];
+let black = [0];
 
 
 function setup_wallpaper(pWallpaper) {
@@ -36,13 +41,7 @@ pWallpaper.output_mode(DEVELOP_GLYPH);
   pWallpaper.grid_settings.cell_height = 200;
   pWallpaper.grid_settings.row_offset  = 100;
 
-// Color variables
 
-let red = (190, 30, 45);
-let yellow = (255,212,23);
-let blue = (33, 64, 154);
-let white = (255);
-let black = (0);
 
 }
 
@@ -55,7 +54,7 @@ DrawPacEatTri()
 
 DrawFunkySquare()
 
-fill(255)
+fill(white)
 stroke(0)  
 strokeWeight(ss)
 arc(55, 90, 80, 70, 270, 420, PIE);
@@ -91,40 +90,37 @@ circle(155, 63, 33)
 
 function DrawPacEatTri(){
 
-fill(190, 30, 45)
+fill(red)
 stroke(0)  
 strokeWeight(ss)
 triangle (triX, triY, triX + 40, triY + 70, triX, triY + 50)
 
-fill(255, 212, 23,) //Yellow
-stroke(0)  
-strokeWeight(ss)
+fill(yellow) 
 arc(triX, triY + 50, 40, 40, 386, 270, PIE)
 }
 
 function DrawFunkySquare(){
 
-fill(255, 212, 23) //Yellow
-stroke(0)  
+fill(yellow) 
+stroke(black)  
 strokeWeight(ss)
-rect(140,120,50,70)
+rect(squareX + 45, squareY +40 , 50, 70)
 
-fill(33, 64, 154) //Blue
-square(95, 80, 80)
+fill(blue) 
+square(squareX, squareY, 80)
+
+arc(squareX + 80 , squareY + 80, 30, 30, 270, 180, PIE)
+
+fill(yellow)
+square(squareX + 65, squareY + 65, 15)
 
 
- fill(33, 64, 154) //Blue
-arc(175, 160, 30, 30, 270, 180, PIE)
+fill(red) 
+arc(squareX + 40,squareY , 80 , 80, 0, 180, PIE )
 
-fill(255, 212, 23,) //Yellow
-square(160, 145, 15)
 
-stroke(0)  
-strokeWeight(ss)
-fill(190, 30, 45) //Red 
-arc(135, 80, 80 , 80, 0, 180, PIE )
-fill(255, 212, 23,) //Yellow
-arc(95, 160, 90, 100, 270, 0, PIE)
+fill(yellow) 
+arc(squareX , squareY + 80, 90, 100, 270, 0, PIE)
 
 
 
