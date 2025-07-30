@@ -1,12 +1,27 @@
 //your parameter variables go here!
 
-// Color variables
+let ss = 0.4 // 0.4
 
-let redCol = (190, 30, 45);
-let yellow = (255,212,23);
-let blue = (33, 64, 154);
-let white = (255);
-let black = (0);
+let triX = 55; //55
+let triY = 90; //90
+
+let rectX = 140;
+let rectY = 120;
+let rectW = 50;
+let rectH = 70;
+
+let squareX = 95;
+let squareY = 80;
+let squaresize = 80;
+
+let arcw = 80;
+let arcH = 70;
+
+let ellipseW = 100;
+let ellipseH = 30; 
+
+let circleSize = 33;
+
 
 
 function setup_wallpaper(pWallpaper) {
@@ -21,8 +36,13 @@ pWallpaper.output_mode(DEVELOP_GLYPH);
   pWallpaper.grid_settings.cell_height = 200;
   pWallpaper.grid_settings.row_offset  = 100;
 
+// Color variables
 
-
+let red = (190, 30, 45);
+let yellow = (255,212,23);
+let blue = (33, 64, 154);
+let white = (255);
+let black = (0);
 
 }
 
@@ -31,58 +51,27 @@ function wallpaper_background() {
 }
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
 
+DrawPacEatTri()
 
-
-fill(190, 30, 45)
-stroke(0)  
-strokeWeight(0.4)
- triangle (55, 90, 95, 160, 55, 140)
-
-  fill(255, 212, 23) //Yellow
-stroke(0)  
-strokeWeight(0.4)
-rect(140,120,50,70)
-
-fill(33, 64, 154) //Blue
-stroke(0)  
-strokeWeight(0.4)
-  square(95, 80, 80)
+DrawFunkySquare()
 
 fill(255)
 stroke(0)  
-strokeWeight(0.4)
+strokeWeight(ss)
 arc(55, 90, 80, 70, 270, 420, PIE);
-
- fill(33, 64, 154) //Blue
-stroke(0)  
-strokeWeight(0.4)
-arc(175, 160, 30, 30, 270, 180, PIE)
 
 fill(255, 212, 23) //Yellow
 stroke(0)  
-strokeWeight(0.4)
- rect(10, 10, 45, 80);
+strokeWeight(ss)
+rect(10, 10, 45, 80);
 
  fill(33, 64, 154) //Blue
 stroke(0)  
-strokeWeight(0.4)
+strokeWeight(ss)
   ellipse(94, 25, 100, 30)
 
-fill(255, 212, 23,) //Yellow
-square(160, 145, 15)
-
-stroke(0)  
-strokeWeight(0.4)
-fill(190, 30, 45) //Red 
-arc(135, 80, 80 , 80, 0, 180, PIE )
-fill(255, 212, 23,) //Yellow
-arc(95, 160, 90, 100, 270, 0, PIE)
 
 
-fill(255, 212, 23,) //Yellow
-stroke(0)  
-strokeWeight(0.4)
-arc(55, 140, 40, 40, 386, 270, PIE)
 
 fill(190, 30, 45,) //Red 
 beginShape()
@@ -95,8 +84,49 @@ endShape()
 
  fill(0)
 stroke(0)  
-strokeWeight(0.4)
+strokeWeight(ss)
 circle(155, 63, 33)
+
+}
+
+function DrawPacEatTri(){
+
+fill(190, 30, 45)
+stroke(0)  
+strokeWeight(ss)
+triangle (triX, triY, triX + 40, triY + 70, triX, triY + 50)
+
+fill(255, 212, 23,) //Yellow
+stroke(0)  
+strokeWeight(ss)
+arc(triX, triY + 50, 40, 40, 386, 270, PIE)
+}
+
+function DrawFunkySquare(){
+
+fill(255, 212, 23) //Yellow
+stroke(0)  
+strokeWeight(ss)
+rect(140,120,50,70)
+
+fill(33, 64, 154) //Blue
+square(95, 80, 80)
+
+
+ fill(33, 64, 154) //Blue
+arc(175, 160, 30, 30, 270, 180, PIE)
+
+fill(255, 212, 23,) //Yellow
+square(160, 145, 15)
+
+stroke(0)  
+strokeWeight(ss)
+fill(190, 30, 45) //Red 
+arc(135, 80, 80 , 80, 0, 180, PIE )
+fill(255, 212, 23,) //Yellow
+arc(95, 160, 90, 100, 270, 0, PIE)
+
+
 
 
 }
