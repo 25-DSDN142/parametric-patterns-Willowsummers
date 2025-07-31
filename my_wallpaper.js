@@ -2,7 +2,7 @@
 
 //strokeWeight 
 let ss = 0.4 // 0.4 thin
-
+let sb = 1.2 // 1.2 thick
 // Parameters for function DrawPacEatTri
 let triX =55; //55
 let triY = 60; //90
@@ -28,8 +28,8 @@ let black = [0];
 let beige = [230, 223, 204]
 
 // if statements parameters 
-let flipBAU = true;
-let flipHAUS = true;
+let flipBAU = false;
+let flipHAUS = false;
 
 function setup_wallpaper(pWallpaper) {
 pWallpaper.output_mode(DEVELOP_GLYPH);
@@ -50,8 +50,8 @@ function wallpaper_background() {
 }
 function my_symbol(){ // do not rename this function. Treat this similarly to a Draw function
 
-  DrawFunkySquare();
-  DrawCorners();
+ // DrawFunkySquare();
+//  DrawCorners();
 
   // Flip BAU if statement 
   if (flipBAU) {
@@ -62,7 +62,7 @@ function my_symbol(){ // do not rename this function. Treat this similarly to a 
     DrawBAU();
     pop();
   } else {
-    DrawBAU();
+   // DrawBAU();
   }
 
  // Flip HAUS if statement 
@@ -74,12 +74,32 @@ function my_symbol(){ // do not rename this function. Treat this similarly to a 
     DrawHAUS();
     pop();
   } else {
-   DrawHAUS();
+  // DrawHAUS();
   }
 
 
+  strokeWeight(3)
+rect(50 , 30 , 100, 110)
+rect(50, 140, 70, 40)
+fill(red)
+rect(50 , 30 , 70, 80)
+rect(100, 125, 50, 15)
+fill( yellow)
+rect(120, 30, 30, 50)
+fill (blue)
+rect( 120, 140, 30, 40 )
+fill(black)
+rect(50, 155, 50, 25)
+line(120, 110, 120, 140)
+line(100, 110, 100, 155)
+arc(50, 140, 60, 60, 270, 0 )
 
-  
+fill(red)
+
+
+
+
+
 }
 
   
