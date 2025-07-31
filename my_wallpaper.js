@@ -27,6 +27,10 @@ let white = [255];
 let black = [0];
 let beige = [230, 223, 204]
 
+// if statements parameters 
+let flipBAU = true;
+let flipHAUS = true;
+
 function setup_wallpaper(pWallpaper) {
 pWallpaper.output_mode(DEVELOP_GLYPH);
 //pWallpaper.output_mode(GRID_WALLPAPER);
@@ -37,32 +41,51 @@ pWallpaper.output_mode(DEVELOP_GLYPH);
   //Grid settings
   pWallpaper.grid_settings.cell_width  = 200;
   pWallpaper.grid_settings.cell_height = 200;
-  pWallpaper.grid_settings.row_offset  = 0;
-
-
+  pWallpaper.grid_settings.row_offset  = 100;
 
 }
 
 function wallpaper_background() {
   background(beige)
 }
-function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
+function my_symbol(){ // do not rename this function. Treat this similarly to a Draw function
+
+  DrawFunkySquare();
+  DrawCorners();
+
+  // Flip BAU if statement 
+  if (flipBAU) {
+    push();
+    scale(-1, 1); 
+    translate(-190, -10); 
+    rotate()
+    DrawBAU();
+    pop();
+  } else {
+    DrawBAU();
+  }
+
+ // Flip HAUS if statement 
+  if (flipHAUS) {
+    push();
+    scale(-1, 1); 
+    translate(-210, 230); 
+    rotate( -90)
+    DrawHAUS();
+    pop();
+  } else {
+   DrawHAUS();
+  }
 
 
-DrawFunkySquare();
-DrawCorners();
-//DrawBAU();
-DrawHAUS();
 
-push();
-translate(200, 100); // move to bottom right
-scale(-1, -1);       // flip both axes
-DrawBAU();
-pop();
+  
 }
 
-//Functions
+  
 
+
+//Functions
 function DrawPacEatTri(){
 
 fill(red)
