@@ -1,8 +1,8 @@
 //your parameter variables go here!
-
 //strokeWeight 
-let ss = 0.4 // 0.4 thin
-let sb = 1.2 // 1.2 thick
+let ss = 1.5 // 1.5 stroke small 
+let sb = 3 // 3 stroke big 
+
 // Parameters for function DrawPacEatTri
 let triX =55; //55
 let triY = 60; //90
@@ -19,21 +19,26 @@ let BAUY = -14//20
 let HAUSX = 10//40
 let HAUSY = 153 //40
 
+//Parameters for DrawCoolSquare 
+
+let rectX = 50 //50
+let rectY = 30 //30
+
 // Color variables
-let red = [190, 30, 45];
-let yellow = [255,212,23];
-let blue = [33, 64, 154];
+let red = [198, 0, 1];
+let yellow = [229,185,20];
+let blue = [34, 30, 193];
 let white = [255];
 let black = [0];
 let beige = [230, 223, 204]
 
 // if statements parameters 
-let flipBAU = false;
-let flipHAUS = false;
+let flipBAU = true;
+let flipHAUS = true;
 
 function setup_wallpaper(pWallpaper) {
-pWallpaper.output_mode(DEVELOP_GLYPH);
-//pWallpaper.output_mode(GRID_WALLPAPER);
+//pWallpaper.output_mode(DEVELOP_GLYPH);
+pWallpaper.output_mode(GRID_WALLPAPER);
   
   pWallpaper.resolution(FIT_TO_SCREEN);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
@@ -50,8 +55,17 @@ function wallpaper_background() {
 }
 function my_symbol(){ // do not rename this function. Treat this similarly to a Draw function
 
- // DrawFunkySquare();
-//  DrawCorners();
+//DrawFunkySquare();
+
+DrawCoolSquare();
+
+
+
+
+
+
+
+
 
   // Flip BAU if statement 
   if (flipBAU) {
@@ -62,7 +76,7 @@ function my_symbol(){ // do not rename this function. Treat this similarly to a 
     DrawBAU();
     pop();
   } else {
-   // DrawBAU();
+    DrawBAU();
   }
 
  // Flip HAUS if statement 
@@ -74,50 +88,24 @@ function my_symbol(){ // do not rename this function. Treat this similarly to a 
     DrawHAUS();
     pop();
   } else {
-  // DrawHAUS();
+  DrawHAUS();
   }
 
-
-  strokeWeight(3)
-rect(50 , 30 , 100, 110)
-rect(50, 140, 70, 40)
-fill(red)
-rect(50 , 30 , 70, 80)
-rect(100, 125, 50, 15)
-fill( yellow)
-rect(120, 30, 30, 50)
-fill (blue)
-rect( 120, 140, 30, 40 )
-fill(black)
-rect(50, 155, 50, 25)
-line(120, 110, 120, 140)
-line(100, 110, 100, 155)
-arc(50, 140, 60, 60, 270, 0 )
-
-fill(red)
-
-
-
-
-
+  DrawCorners();
 }
 
   
 
 
 //Functions
-function DrawPacEatTri(){
-
-fill(red)
-stroke(0)  
-strokeWeight(ss)
-triangle (triX, triY, triX + 40, triY + 70, triX, triY + 50)
-
-fill(yellow) 
-arc(triX, triY + 50, 40, 40, 386, 270, PIE)
-}
 
 function DrawFunkySquare(){
+
+fill(white)
+stroke(black)
+strokeWeight(ss)
+rect(squareX , squareY , 95, 110)
+arc( squareX, squareY + 110, 60, 60 , 270, 0, PIE)
 
 fill(yellow) 
 stroke(black)  
@@ -128,21 +116,17 @@ fill(blue)
 square(squareX, squareY, 80)
 arc(squareX + 80 , squareY + 80, 30, 30, 270, 180, PIE)
 
-fill(yellow)
-square(squareX + 65, squareY + 65, 15)
-
 fill(red) 
 arc(squareX + 40,squareY , 80 , 80, 0, 180, PIE )
+square(squareX + 65, squareY + 65, 15)
 
 fill(yellow) 
 arc(squareX , squareY + 80, 90, 100, 270, 0, PIE)
 
-noFill()
-stroke(black)
-strokeWeight(ss)
-rect(squareX , squareY , 95, 110)
-arc( squareX, squareY + 110, 60, 60 , 270, 0, PIE)
+
 }
+
+
 
 function DrawCorners(){
 
@@ -154,6 +138,7 @@ arc(200,0, 60, 60 , 90, 180, PIE)
 arc(0,0, 60, 60 , 360, 90, PIE)
 
 }
+
 
 
 function DrawBAU(){
@@ -177,6 +162,8 @@ function DrawBAU(){
   arc(BAUX + 50, BAUY + 53, 18, 18, 0, 180);
 
 }
+
+
 
 function DrawHAUS(){
 noStroke();
@@ -204,6 +191,32 @@ noStroke();
 
 }
 
+function DrawCoolSquare(){
+
+  strokeWeight(sb)
+rect(rectX , rectY , 100, 110)
+rect(rectX, rectY + 110, 70, 40)
+
+  fill(red)
+rect(rectX , rectY , 70, 80)
+rect(rectX + 50, rectY + 95, 50, 15)
+  fill( yellow)
+rect(rectX + 70, rectY, 30, 50)
+rect(rectX + 50, rectY + 80, 20, 15)
+  fill(black)
+rect(rectX, rectY + 125, 50, 25)
+  fill (blue)
+rect( rectX + 70, rectY + 110, 30, 40 )
+arc(rectX + 25, rectY + 80, 50, 50, 0, 180, CHORD )
+  noFill()
+rect(rectX + 50, rectY + 110, 20, 40)
+
+
+
+
+
+
+}
 
 
 
