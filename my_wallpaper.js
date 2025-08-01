@@ -32,13 +32,17 @@ let white = [255];
 let black = [0];
 let beige = [230, 223, 204]
 
-// if statements parameters 
+
+
+// Here go my if statements parameters 
 let flipBAU = true;
 let flipHAUS = true;
 
+let cornerColor = 1; // changes colour of corners
+// 1=blue 2=yellow 3=red 4=black 5=white
 function setup_wallpaper(pWallpaper) {
-//pWallpaper.output_mode(DEVELOP_GLYPH);
-pWallpaper.output_mode(GRID_WALLPAPER);
+pWallpaper.output_mode(DEVELOP_GLYPH);
+//pWallpaper.output_mode(GRID_WALLPAPER);
   
   pWallpaper.resolution(FIT_TO_SCREEN);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
@@ -46,7 +50,7 @@ pWallpaper.output_mode(GRID_WALLPAPER);
   //Grid settings
   pWallpaper.grid_settings.cell_width  = 200;
   pWallpaper.grid_settings.cell_height = 200;
-  pWallpaper.grid_settings.row_offset  = 100;
+  pWallpaper.grid_settings.row_offset  = 0;
 
 }
 
@@ -58,10 +62,6 @@ function my_symbol(){ // do not rename this function. Treat this similarly to a 
 //DrawFunkySquare();
 
 DrawCoolSquare();
-
-
-
-
 
 
 
@@ -91,8 +91,11 @@ DrawCoolSquare();
   DrawHAUS();
   }
 
+
   DrawCorners();
+ 
 }
+
 
   
 
@@ -130,12 +133,24 @@ arc(squareX , squareY + 80, 90, 100, 270, 0, PIE)
 
 function DrawCorners(){
 
-noStroke()
-fill(blue)
-arc(0,200, 60, 60 , 270, 0, PIE)
-arc(200,200, 60, 60 , 180, 270, PIE)
-arc(200,0, 60, 60 , 90, 180, PIE)
-arc(0,0, 60, 60 , 360, 90, PIE)
+ 
+
+  if (cornerColor === 1) {
+    fill(blue);
+  } else if (cornerColor === 2) {
+    fill(yellow);
+  } else if (cornerColor === 3) {
+    fill(red);
+  } else if (cornerColor === 4) {
+    fill(black);
+  } else if (cornerColor === 5) {
+    fill(white);
+  }
+ noStroke()
+arc(0,200, 60, 60 , 270, 0, PIE);
+arc(200,200, 60, 60 , 180, 270, PIE); 
+arc(200,0, 60, 60 , 90, 180, PIE);
+arc(0,0, 60, 60 , 360, 90, PIE);
 
 }
 
@@ -151,9 +166,14 @@ function DrawBAU(){
   arc(BAUX + 6, BAUY + 52, 16, 16, PI + HALF_PI, HALF_PI, CHORD); 
 
   // A
-  triangle(BAUX + 15, BAUY + 60, BAUX + 27, BAUY + 30, BAUX + 39, BAUY + 60);
-  fill(beige);
-  triangle(BAUX + 25, BAUY + 60, BAUX + 27, BAUY + 56, BAUX + 29, BAUY + 60);
+beginShape();
+vertex(BAUX + 15, BAUY + 60); // left base point of larger triangle
+vertex(BAUX + 27, BAUY + 30); // top point of larger triangle
+vertex(BAUX + 39, BAUY + 60); // right base point of larger triangle
+vertex(BAUX + 29, BAUY + 60); // right point of small triangle
+vertex(BAUX + 27, BAUY + 56); // top of small triangle
+vertex(BAUX + 25, BAUY + 60); // left point of small triangle
+endShape(CLOSE);
   
   // U
   fill(black);
@@ -175,9 +195,14 @@ noStroke();
   rect(HAUSX + 76, HAUSY + 20, 6, 6);
 
   // A
-  triangle(HAUSX + 90, HAUSY + 40, HAUSX + 102, HAUSY + 10, HAUSX + 114, HAUSY + 40);
-  fill(beige);
-  triangle(HAUSX + 100, HAUSY + 40, HAUSX + 102, HAUSY + 36, HAUSX + 104, HAUSY + 40);
+ beginShape();
+vertex(HAUSX + 90, HAUSY + 40);   // bottom left
+vertex(HAUSX + 102, HAUSY + 10);  // top
+vertex(HAUSX + 114, HAUSY + 40);  // bottom right
+vertex(HAUSX + 104, HAUSY + 40);  // bottom right of small triangle
+vertex(HAUSX + 102, HAUSY + 36);  // top of small triangle
+vertex(HAUSX + 100, HAUSY + 40);  // bottom left of small triangle
+endShape(CLOSE);
  
   // U
    fill(black);
@@ -211,11 +236,16 @@ arc(rectX + 25, rectY + 80, 50, 50, 0, 180, CHORD )
   noFill()
 rect(rectX + 50, rectY + 110, 20, 40)
 
+}
 
-
-
-
-
+function keyPressed() {
+  if (key === '1') {
+    cornerColourMode = 1;
+  } else if (key === '2') {
+    cornerColourMode = 2;
+  } else if (key === '3') {
+    cornerColourMode = 3;
+  }
 }
 
 
