@@ -16,8 +16,8 @@ let BAUX = 30//20
 let BAUY = -14//20
 
 //Parameters for DrawHAUS
-let HAUSX = 10//40
-let HAUSY = 153 //40
+let HAUSX = 31//40
+let HAUSY = 135 //40
 
 //Parameters for DrawCoolSquare 
 
@@ -30,16 +30,23 @@ let yellow = [229,185,20];
 let blue = [34, 30, 193];
 let white = [255];
 let black = [0];
-let beige = [230, 223, 204]
+
+//Background colours - Just using // to switch between 
+let BG = [230, 223, 204]
 
 
 
 // Here go my if statements parameters 
-let flipBAU = true;
-let flipHAUS = true;
+let flipBAU = true; //flip BAU
+let flipHAUS = true; // flip HAUS
 
 let cornerColor = 1; // changes colour of corners
 // 1=blue 2=yellow 3=red 4=black 5=white
+
+let symbolMode = 2; //switched between square symbols
+// 1 = Funky, 2 = Cool
+
+
 function setup_wallpaper(pWallpaper) {
 pWallpaper.output_mode(DEVELOP_GLYPH);
 //pWallpaper.output_mode(GRID_WALLPAPER);
@@ -55,24 +62,24 @@ pWallpaper.output_mode(DEVELOP_GLYPH);
 }
 
 function wallpaper_background() {
-  background(beige)
+  background(BG)
 }
 function my_symbol(){ // do not rename this function. Treat this similarly to a Draw function
 
-//DrawFunkySquare();
-
-DrawCoolSquare();
 
 
 
-
-
+if (symbolMode === 1) {
+  DrawFunkySquare();
+} else if (symbolMode === 2) {
+  DrawCoolSquare();
+}
   // Flip BAU if statement 
   if (flipBAU) {
     push();
-    scale(-1, 1); 
-    translate(-190, -10); 
-    rotate()
+    scale( -1, 1); 
+    translate(-140, 5); 
+    rotate(90)
     DrawBAU();
     pop();
   } else {
@@ -83,7 +90,7 @@ DrawCoolSquare();
   if (flipHAUS) {
     push();
     scale(-1, 1); 
-    translate(-210, 230); 
+    translate(-186, 245); 
     rotate( -90)
     DrawHAUS();
     pop();
@@ -239,6 +246,8 @@ rect(rectX + 50, rectY + 110, 20, 40)
 }
 
 function keyPressed() {
+
+  //for corner colours 
   if (key === '1') {
     cornerColourMode = 1;
   } else if (key === '2') {
@@ -248,7 +257,14 @@ function keyPressed() {
   }
 }
 
-
+function keyPressed() {
+  if (key === '1') {
+    symbolMode = 1;
+  }
+  if (key === '2') {
+    symbolMode = 2;
+  }
+}
 
 
 
