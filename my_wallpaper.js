@@ -3,10 +3,6 @@
 let ss = 1.5 // 1.5 stroke small 
 let sb = 3 // 3 stroke big 
 
-// Parameters for function DrawPacEatTri
-let triX =55; //55
-let triY = 60; //90
-
 // Parameters for function DrawFunkySquare
 let squareX = 50; //95
 let squareY = 50; //80
@@ -16,11 +12,10 @@ let BAUX = 30//20
 let BAUY = -14//20
 
 //Parameters for DrawHAUS
-let HAUSX = 31//40
+let HAUSX = 30//40
 let HAUSY = 135 //40
 
 //Parameters for DrawCoolSquare 
-
 let rectX = 50 //50
 let rectY = 30 //30
 
@@ -33,17 +28,17 @@ let black = [0];
 
 //Background colours - Just using // to switch between 
 let BG = [230, 223, 204]
-
-
+//let BG = [255]
 
 // Here go my if statements parameters 
-let flipBAU = true; //flip BAU
+let flipBAU = false; //flip BAU
 let flipHAUS = true; // flip HAUS
 
-let cornerColor = 1; // changes colour of corners
-// 1=blue 2=yellow 3=red 4=black 5=white
+let cornerColor = 5; // changes colour of corners
+// 1=blue 2=yellow 3=red 4=black 5=white 6=not appear
+let csize = 50 // 60
 
-let symbolMode = 2; //switched between square symbols
+let symbolMode = 1; //switched between square symbols
 // 1 = Funky, 2 = Cool
 
 
@@ -57,13 +52,13 @@ pWallpaper.output_mode(DEVELOP_GLYPH);
   //Grid settings
   pWallpaper.grid_settings.cell_width  = 200;
   pWallpaper.grid_settings.cell_height = 200;
-  pWallpaper.grid_settings.row_offset  = 0;
-
+  pWallpaper.grid_settings.row_offset  = 100;
 }
 
 function wallpaper_background() {
-  background(BG)
-}
+  background(BG) }
+
+
 function my_symbol(){ // do not rename this function. Treat this similarly to a Draw function
 
 
@@ -111,28 +106,29 @@ if (symbolMode === 1) {
 
 function DrawFunkySquare(){
 
-fill(white)
-stroke(black)
-strokeWeight(ss)
-rect(squareX , squareY , 95, 110)
-arc( squareX, squareY + 110, 60, 60 , 270, 0, PIE)
+fill(white);
+stroke(black);
+strokeWeight(ss);
+rect(squareX , squareY , 95, 130);
 
-fill(yellow) 
-stroke(black)  
-strokeWeight(ss)
-rect(squareX + 45, squareY +40 , 50, 70)
+fill(black);
+arc( squareX, squareY + 130, 90, 70 , 270, 0, PIE);
 
-fill(blue) 
-square(squareX, squareY, 80)
-arc(squareX + 80 , squareY + 80, 30, 30, 270, 180, PIE)
+fill(yellow);
+stroke(black);
+strokeWeight(ss);
+rect(squareX + 45, squareY +40 , 50, 90);
 
-fill(red) 
-arc(squareX + 40,squareY , 80 , 80, 0, 180, PIE )
-square(squareX + 65, squareY + 65, 15)
+fill(blue); 
+square(squareX, squareY, 80);
+arc(squareX + 80 , squareY + 80, 30, 30, 270, 180, PIE);
 
-fill(yellow) 
-arc(squareX , squareY + 80, 90, 100, 270, 0, PIE)
+fill(red); 
+arc(squareX + 40,squareY , 80 , 80, 0, 180, PIE );
+square(squareX + 65, squareY + 65, 15);
 
+fill(yellow); 
+arc(squareX , squareY + 80, 90, 100, 270, 0, PIE);
 
 }
 
@@ -154,10 +150,10 @@ function DrawCorners(){
     fill(white);
   }
  noStroke()
-arc(0,200, 60, 60 , 270, 0, PIE);
-arc(200,200, 60, 60 , 180, 270, PIE); 
-arc(200,0, 60, 60 , 90, 180, PIE);
-arc(0,0, 60, 60 , 360, 90, PIE);
+arc(0,200, csize, csize , 270, 0, PIE);
+arc(200,200, csize, csize , 180, 270, PIE); 
+arc(200,0, csize, csize , 90, 180, PIE);
+arc(0,0, csize, csize , 360, 90, PIE);
 
 }
 
@@ -219,29 +215,29 @@ endShape(CLOSE);
 
   // S
   arc(HAUSX + 145, HAUSY + 18, 18, 18, 90, 360);
-  arc(HAUSX + 145, HAUSY + 32, 18, 18, 270, 180 )
+  arc(HAUSX + 145, HAUSY + 32, 18, 18, 270, 180 );
 
 }
 
 function DrawCoolSquare(){
 
-  strokeWeight(sb)
-rect(rectX , rectY , 100, 110)
-rect(rectX, rectY + 110, 70, 40)
+  strokeWeight(sb);
+rect(rectX , rectY , 100, 110);
+rect(rectX, rectY + 110, 70, 40);
 
-  fill(red)
-rect(rectX , rectY , 70, 80)
-rect(rectX + 50, rectY + 95, 50, 15)
-  fill( yellow)
-rect(rectX + 70, rectY, 30, 50)
-rect(rectX + 50, rectY + 80, 20, 15)
-  fill(black)
-rect(rectX, rectY + 125, 50, 25)
-  fill (blue)
-rect( rectX + 70, rectY + 110, 30, 40 )
-arc(rectX + 25, rectY + 80, 50, 50, 0, 180, CHORD )
-  noFill()
-rect(rectX + 50, rectY + 110, 20, 40)
+  fill(red);
+rect(rectX , rectY , 70, 80);
+rect(rectX + 50, rectY + 95, 50, 15);
+  fill( yellow);
+rect(rectX + 70, rectY, 30, 50);
+rect(rectX + 50, rectY + 80, 20, 15);
+  fill(black);
+rect(rectX, rectY + 125, 50, 25);
+  fill (blue);
+rect( rectX + 70, rectY + 110, 30, 40 );
+arc(rectX + 25, rectY + 80, 50, 50, 0, 180, CHORD );
+  noFill();
+rect(rectX + 50, rectY + 110, 20, 40);
 
 }
 
