@@ -1,32 +1,73 @@
-You will need to fill out this file for hand in. 
-
-The bellow is just an example, feel free to disregard this documents contents.
-
-
-Your final settings.txt will look something like this when you are finished:
-
 /////////////////////////////////
 
 Wallpaper 1:
 
 //your parameter variables go here!
-let rect_width  = 20;
-let rect_height = 20;
-let paramter1 = 10;
-let paramter2 = true;
-let paramter3 = 50; 
-let paramter4 = 0; 
-let paramter5 = 60;
+//strokeWeight 
+let ss = 1.5; // 1.5 stroke small 
+let sb = 3; // 3 stroke big 
+
+// Parameters for function DrawFunkySquare
+let squareX = 50; //95
+let squareY = 50; //80
+
+//Parameters for DrawBAU
+let BAUX = 30; //20
+let BAUY = -14; //20
+
+//Parameters for DrawHAUS
+let HAUSX = 30; //40
+let HAUSY = 135; //40
+
+//Parameters for DrawCoolSquare 
+let rectX = 50; //50
+let rectY = 30; //30
+
+//Parameters for grid settings
+let cellWidth = 200; //200
+let cellHeight = 200; //200
+let offset = 0; //0
+
+// Color variables
+let red = [198, 0, 1];
+let yellow = [229,185,20];
+let blue = [34, 30, 193];
+let white = [255];
+let black = [0];
+
+//Background colours - Just using // to switch between 
+//let BG = [230, 223, 204]; //beige 
+let BG = [255]; //white 
+//let BG = [0]; //Black
+//let BG = [116,164,102]; //Green
+//let BG = [204,164,160] // Oyster Pink
+
+// Here go my if statements parameters 
+let flipBAU = false; //flip BAU
+let flipHAUS = false; // flip HAUS
+
+let cornerColor = 1; // changes colour of corners
+// 1=blue 2=yellow 3=red 4=black 5=white 6=not appear
+
+let csize = 60; // 60 
+//Circle size 
+
+let symbolMode = 1; //switched between square symbols
+// 1 = Funky, 2 = Cool
+
 
 function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(GRID_WALLPAPER);
-  pWallpaper.resolution(NINE_LANDSCAPE);
+//pWallpaper.output_mode(DEVELOP_GLYPH);
+pWallpaper.output_mode(GRID_WALLPAPER);
+//pWallpaper.output_mode(GLIDE_WALLPAPER);
+
+  pWallpaper.resolution(NINE_PORTRAIT);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
-  pWallpaper.grid_settings.cell_width  = 100;
-  pWallpaper.grid_settings.cell_height = 100;
-  pWallpaper.grid_settings.row_offset  = 50;
+  pWallpaper.grid_settings.cell_width  = cellWidth;
+  pWallpaper.grid_settings.cell_height = cellHeight;
+  pWallpaper.grid_settings.row_offset  = offset;
 }
 
 /////////////////////////////////
@@ -34,21 +75,645 @@ function setup_wallpaper(pWallpaper) {
 Wallpaper 2:
 
 //your parameter variables go here!
-let rect_width  = 10;
-let rect_height = 10;
-let paramter1 = 20;
-let paramter2 = false;
-let paramter3 = 50; 
-let paramter4 = 80; 
-let paramter5 = 30;
+//strokeWeight 
+let ss = 1.5; // 1.5 stroke small 
+let sb = 3; // 3 stroke big 
+
+// Parameters for function DrawFunkySquare
+let squareX = 50; //95
+let squareY = 50; //80
+
+//Parameters for DrawBAU
+let BAUX = 30; //20
+let BAUY = -14; //20
+
+//Parameters for DrawHAUS
+let HAUSX = 30; //40
+let HAUSY = 135; //40
+
+//Parameters for DrawCoolSquare 
+let rectX = 50; //50
+let rectY = 30; //30
+
+//Parameters for grid settings
+let cellWidth = 200; //200
+let cellHeight = 200; //200
+let offset = 30; //0
+
+// Color variables
+let red = [198, 0, 1];
+let yellow = [229,185,20];
+let blue = [34, 30, 193];
+let white = [255];
+let black = [0];
+
+//Background colours - Just using // to switch between 
+let BG = [230, 223, 204]; //beige 
+//let BG = [255]; //white 
+//let BG = [0]; //Black
+//let BG = [116,164,102]; //Green
+//let BG = [204,164,160] // Oyster Pink
+
+// Here go my if statements parameters 
+let flipBAU =  true; //flip BAU
+let flipHAUS = true; // flip HAUS
+
+let cornerColor = 2; // changes colour of corners
+// 1=blue 2=yellow 3=red 4=black 5=white 6=not appear
+
+let csize = 70; // 60 
+//Circle size 
+
+let symbolMode = 1; //switched between square symbols
+// 1 = Funky, 2 = Cool
+
 
 function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(GRID_WALLPAPER);
-  pWallpaper.resolution(NINE_LANDSCAPE);
+//pWallpaper.output_mode(DEVELOP_GLYPH);
+pWallpaper.output_mode(GRID_WALLPAPER);
+//pWallpaper.output_mode(GLIDE_WALLPAPER);
+
+  pWallpaper.resolution(NINE_PORTRAIT);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
-  pWallpaper.grid_settings.cell_width  = 100;
-  pWallpaper.grid_settings.cell_height = 100;
-  pWallpaper.grid_settings.row_offset  = 0;
+  pWallpaper.grid_settings.cell_width  = cellWidth;
+  pWallpaper.grid_settings.cell_height = cellHeight;
+  pWallpaper.grid_settings.row_offset  = offset;
+}
+
+/////////////////////////////////
+
+Wallpaper 3:
+
+//your parameter variables go here!
+//strokeWeight 
+let ss = 1.5; // 1.5 stroke small 
+let sb = 3; // 3 stroke big 
+
+// Parameters for function DrawFunkySquare
+let squareX = 50; //95
+let squareY = 50; //80
+
+//Parameters for DrawBAU
+let BAUX = 30; //20
+let BAUY = -14; //20
+
+//Parameters for DrawHAUS
+let HAUSX = 30; //40
+let HAUSY = 135; //40
+
+//Parameters for DrawCoolSquare 
+let rectX = 50; //50
+let rectY = 30; //30
+
+//Parameters for grid settings
+let cellWidth = 200; //200
+let cellHeight = 190; //200
+let offset = 100; //0
+
+// Color variables
+let red = [198, 0, 1];
+let yellow = [229,185,20];
+let blue = [34, 30, 193];
+let white = [255];
+let black = [0];
+
+//Background colours - Just using // to switch between 
+//let BG = [230, 223, 204]; //beige 
+//let BG = [255]; //white 
+//let BG = [0]; //Black
+let BG = [116,164,102]; //Green
+//let BG = [204,164,160] // Oyster Pink
+
+// Here go my if statements parameters 
+let flipBAU =  true; //flip BAU
+let flipHAUS = true; // flip HAUS
+
+let cornerColor = 5; // changes colour of corners
+// 1=blue 2=yellow 3=red 4=black 5=white 6=not appear
+
+let csize = 70; // 60 
+//Circle size 
+
+let symbolMode = 2; //switched between square symbols
+// 1 = Funky, 2 = Cool
+
+
+function setup_wallpaper(pWallpaper) {
+//pWallpaper.output_mode(DEVELOP_GLYPH);
+pWallpaper.output_mode(GRID_WALLPAPER);
+//pWallpaper.output_mode(GLIDE_WALLPAPER);
+
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = cellWidth;
+  pWallpaper.grid_settings.cell_height = cellHeight;
+  pWallpaper.grid_settings.row_offset  = offset;
+}
+
+/////////////////////////////////
+
+Wallpaper 4:
+
+//your parameter variables go here!
+//strokeWeight 
+let ss = 1.5; // 1.5 stroke small 
+let sb = 3; // 3 stroke big 
+
+// Parameters for function DrawFunkySquare
+let squareX = 50; //95
+let squareY = 50; //80
+
+//Parameters for DrawBAU
+let BAUX = 30; //20
+let BAUY = -14; //20
+
+//Parameters for DrawHAUS
+let HAUSX = 30; //40
+let HAUSY = 135; //40
+
+//Parameters for DrawCoolSquare 
+let rectX = 50; //50
+let rectY = 30; //30
+
+//Parameters for grid settings
+let cellWidth = 170; //200
+let cellHeight = 210; //200
+let offset = 100; //0
+
+// Color variables
+let red = [198, 0, 1];
+let yellow = [229,185,20];
+let blue = [34, 30, 193];
+let white = [255];
+let black = [0];
+
+//Background colours - Just using // to switch between 
+let BG = [230, 223, 204]; //beige 
+//let BG = [255]; //white 
+//let BG = [0]; //Black
+//let BG = [116,164,102]; //Green
+//let BG = [204,164,160] // Oyster Pink
+
+// Here go my if statements parameters 
+let flipBAU =  false; //flip BAU
+let flipHAUS = false; // flip HAUS
+
+let cornerColor = 2; // changes colour of corners
+// 1=blue 2=yellow 3=red 4=black 5=white 6=not appear
+
+let csize = 40; // 60 
+//Circle size 
+
+let symbolMode = 2; //switched between square symbols
+// 1 = Funky, 2 = Cool
+
+
+function setup_wallpaper(pWallpaper) {
+//pWallpaper.output_mode(DEVELOP_GLYPH);
+pWallpaper.output_mode(GRID_WALLPAPER);
+//pWallpaper.output_mode(GLIDE_WALLPAPER);
+
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = cellWidth;
+  pWallpaper.grid_settings.cell_height = cellHeight;
+  pWallpaper.grid_settings.row_offset  = offset;
+}
+
+/////////////////////////////////
+
+Wallpaper 5:
+
+//your parameter variables go here!
+//strokeWeight 
+let ss = 1.5; // 1.5 stroke small 
+let sb = 3; // 3 stroke big 
+
+// Parameters for function DrawFunkySquare
+let squareX = 50; //95
+let squareY = 50; //80
+
+//Parameters for DrawBAU
+let BAUX = 30; //20
+let BAUY = -14; //20
+
+//Parameters for DrawHAUS
+let HAUSX = 30; //40
+let HAUSY = 135; //40
+
+//Parameters for DrawCoolSquare 
+let rectX = 50; //50
+let rectY = 30; //30
+
+//Parameters for grid settings
+let cellWidth = 190; //200
+let cellHeight = 210; //200
+let offset = 100; //0
+
+// Color variables
+let red = [198, 0, 1];
+let yellow = [229,185,20];
+let blue = [34, 30, 193];
+let white = [255];
+let black = [0];
+
+//Background colours - Just using // to switch between 
+//let BG = [230, 223, 204]; //beige 
+//let BG = [255]; //white 
+//let BG = [0]; //Black
+let BG = [116,164,102]; //Green
+//let BG = [204,164,160] // Oyster Pink
+
+// Here go my if statements parameters 
+let flipBAU =  false; //flip BAU
+let flipHAUS = false; // flip HAUS
+
+let cornerColor = 4; // changes colour of corners
+// 1=blue 2=yellow 3=red 4=black 5=white 6=not appear
+
+let csize = 60; // 60 
+//Circle size 
+
+let symbolMode = 1; //switched between square symbols
+// 1 = Funky, 2 = Cool
+
+
+function setup_wallpaper(pWallpaper) {
+//pWallpaper.output_mode(DEVELOP_GLYPH);
+//pWallpaper.output_mode(GRID_WALLPAPER);
+pWallpaper.output_mode(GLIDE_WALLPAPER);
+
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = cellWidth;
+  pWallpaper.grid_settings.cell_height = cellHeight;
+  pWallpaper.grid_settings.row_offset  = offset;
+}
+
+/////////////////////////////////
+
+Wallpaper 6:
+
+//your parameter variables go here!
+//strokeWeight 
+let ss = 1.5; // 1.5 stroke small 
+let sb = 3; // 3 stroke big 
+
+// Parameters for function DrawFunkySquare
+let squareX = 50; //95
+let squareY = 50; //80
+
+//Parameters for DrawBAU
+let BAUX = 30; //20
+let BAUY = -14; //20
+
+//Parameters for DrawHAUS
+let HAUSX = 30; //40
+let HAUSY = 135; //40
+
+//Parameters for DrawCoolSquare 
+let rectX = 50; //50
+let rectY = 30; //30
+
+//Parameters for grid settings
+let cellWidth = 250; //200
+let cellHeight = 200; //200
+let offset = 100; //0
+
+// Color variables
+let red = [198, 0, 1];
+let yellow = [229,185,20];
+let blue = [34, 30, 193];
+let white = [255];
+let black = [0];
+
+//Background colours - Just using // to switch between 
+let BG = [230, 223, 204]; //beige 
+//let BG = [255]; //white 
+//let BG = [0]; //Black
+//let BG = [116,164,102]; //Green
+//let BG = [204,164,160] // Oyster Pink
+
+// Here go my if statements parameters 
+let flipBAU =  true; //flip BAU
+let flipHAUS = true; // flip HAUS
+
+let cornerColor = 1; // changes colour of corners
+// 1=blue 2=yellow 3=red 4=black 5=white 6=not appear
+
+let csize = 80; // 60 
+//Circle size 
+
+let symbolMode = 2; //switched between square symbols
+// 1 = Funky, 2 = Cool
+
+
+function setup_wallpaper(pWallpaper) {
+//pWallpaper.output_mode(DEVELOP_GLYPH);
+//pWallpaper.output_mode(GRID_WALLPAPER);
+pWallpaper.output_mode(GLIDE_WALLPAPER);
+
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = cellWidth;
+  pWallpaper.grid_settings.cell_height = cellHeight;
+  pWallpaper.grid_settings.row_offset  = offset;
+}
+
+/////////////////////////////////
+
+Wallpaper 7:
+
+//your parameter variables go here!
+//strokeWeight 
+let ss = 1.5; // 1.5 stroke small 
+let sb = 3; // 3 stroke big 
+
+// Parameters for function DrawFunkySquare
+let squareX = 50; //95
+let squareY = 50; //80
+
+//Parameters for DrawBAU
+let BAUX = 57; //30
+let BAUY = 5; //20
+
+//Parameters for DrawHAUS
+let HAUSX = 35; //40
+let HAUSY = 135; //40
+
+//Parameters for DrawCoolSquare 
+let rectX = 50; //50
+let rectY = 30; //30
+
+//Parameters for grid settings
+let cellWidth = 200; //200
+let cellHeight = 200; //200
+let offset = 100; //0
+
+// Color variables
+let red = [198, 0, 1];
+let yellow = [229,185,20];
+let blue = [34, 30, 193];
+let white = [255];
+let black = [0];
+
+//Background colours - Just using // to switch between 
+//let BG = [230, 223, 204]; //beige 
+//let BG = [255]; //white 
+let BG = [0]; //Black
+//let BG = [116,164,102]; //Green
+//let BG = [204,164,160] // Oyster Pink
+
+// Here go my if statements parameters 
+let flipBAU =  false; //flip BAU
+let flipHAUS = false; // flip HAUS
+
+let cornerColor = 5; // changes colour of corners
+// 1=blue 2=yellow 3=red 4=black 5=white 6=not appear
+
+let csize = 120; // 60 
+//Circle size 
+
+let symbolMode = 2; //switched between square symbols
+// 1 = Funky, 2 = Cool
+
+
+function setup_wallpaper(pWallpaper) {
+//pWallpaper.output_mode(DEVELOP_GLYPH);
+pWallpaper.output_mode(GRID_WALLPAPER);
+//pWallpaper.output_mode(GLIDE_WALLPAPER);
+
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = cellWidth;
+  pWallpaper.grid_settings.cell_height = cellHeight;
+  pWallpaper.grid_settings.row_offset  = offset;
+}
+
+/////////////////////////////////
+
+Wallpaper 8:
+
+//your parameter variables go here!
+//strokeWeight 
+let ss = 1.5; // 1.5 stroke small 
+let sb = 3; // 3 stroke big 
+
+// Parameters for function DrawFunkySquare
+let squareX = 50; //95
+let squareY = 50; //80
+
+//Parameters for DrawBAU
+let BAUX = 57; //30
+let BAUY = 5; //20
+
+//Parameters for DrawHAUS
+let HAUSX = 35; //40
+let HAUSY = 135; //40
+
+//Parameters for DrawCoolSquare 
+let rectX = 50; //50
+let rectY = 30; //30
+
+//Parameters for grid settings
+let cellWidth = 250; //200
+let cellHeight = 200; //200
+let offset = 0; //0
+
+// Color variables
+let red = [198, 0, 1];
+let yellow = [229,185,20];
+let blue = [34, 30, 193];
+let white = [255];
+let black = [0];
+
+//Background colours - Just using // to switch between 
+//let BG = [230, 223, 204]; //beige 
+//let BG = [255]; //white 
+//let BG = [0]; //Black
+//let BG = [116,164,102]; //Green
+let BG = [204,164,160] // Oyster Pink
+
+// Here go my if statements parameters 
+let flipBAU =  false; //flip BAU
+let flipHAUS = false; // flip HAUS
+
+let cornerColor = 5; // changes colour of corners
+// 1=blue 2=yellow 3=red 4=black 5=white 6=not appear
+
+let csize = 30; // 60 
+//Circle size 
+
+let symbolMode = 2; //switched between square symbols
+// 1 = Funky, 2 = Cool
+
+
+function setup_wallpaper(pWallpaper) {
+//pWallpaper.output_mode(DEVELOP_GLYPH);
+//pWallpaper.output_mode(GRID_WALLPAPER);
+pWallpaper.output_mode(GLIDE_WALLPAPER);
+
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = cellWidth;
+  pWallpaper.grid_settings.cell_height = cellHeight;
+  pWallpaper.grid_settings.row_offset  = offset;
+}
+
+/////////////////////////////////
+
+Wallpaper 9:
+
+//your parameter variables go here!
+//strokeWeight 
+let ss = 1.5; // 1.5 stroke small 
+let sb = 3; // 3 stroke big 
+
+// Parameters for function DrawFunkySquare
+let squareX = 50; //95
+let squareY = 50; //80
+
+//Parameters for DrawBAU
+let BAUX = 65; //30
+let BAUY = -10; //20
+
+//Parameters for DrawHAUS
+let HAUSX = 35; //40
+let HAUSY = 135; //40
+
+//Parameters for DrawCoolSquare 
+let rectX = 50; //50
+let rectY = 30; //30
+
+//Parameters for grid settings
+let cellWidth = 250; //200
+let cellHeight = 200; //200
+let offset = 100; //0
+
+// Color variables
+let red = [198, 0, 1];
+let yellow = [229,185,20];
+let blue = [34, 30, 193];
+let white = [255];
+let black = [0];
+
+//Background colours - Just using // to switch between 
+let BG = [230, 223, 204]; //beige 
+//let BG = [255]; //white 
+//let BG = [0]; //Black
+//let BG = [116,164,102]; //Green
+//let BG = [204,164,160] // Oyster Pink
+
+// Here go my if statements parameters 
+let flipBAU =  true; //flip BAU
+let flipHAUS = true; // flip HAUS
+
+let cornerColor = 1; // changes colour of corners
+// 1=blue 2=yellow 3=red 4=black 5=white 6=not appear
+
+let csize = 100; // 60 
+//Circle size 
+
+let symbolMode = 2; //switched between square symbols
+// 1 = Funky, 2 = Cool
+
+
+function setup_wallpaper(pWallpaper) {
+//pWallpaper.output_mode(DEVELOP_GLYPH);
+pWallpaper.output_mode(GRID_WALLPAPER);
+//pWallpaper.output_mode(GLIDE_WALLPAPER);
+
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = cellWidth;
+  pWallpaper.grid_settings.cell_height = cellHeight;
+  pWallpaper.grid_settings.row_offset  = offset;
+}
+
+/////////////////////////////////
+
+Wallpaper 10: (favorite, same as #9)
+
+//your parameter variables go here!
+//strokeWeight 
+let ss = 1.5; // 1.5 stroke small 
+let sb = 3; // 3 stroke big 
+
+// Parameters for function DrawFunkySquare
+let squareX = 50; //95
+let squareY = 50; //80
+
+//Parameters for DrawBAU
+let BAUX = 65; //30
+let BAUY = -10; //20
+
+//Parameters for DrawHAUS
+let HAUSX = 35; //40
+let HAUSY = 135; //40
+
+//Parameters for DrawCoolSquare 
+let rectX = 50; //50
+let rectY = 30; //30
+
+//Parameters for grid settings
+let cellWidth = 250; //200
+let cellHeight = 200; //200
+let offset = 100; //0
+
+// Color variables
+let red = [198, 0, 1];
+let yellow = [229,185,20];
+let blue = [34, 30, 193];
+let white = [255];
+let black = [0];
+
+//Background colours - Just using // to switch between 
+let BG = [230, 223, 204]; //beige 
+//let BG = [255]; //white 
+//let BG = [0]; //Black
+//let BG = [116,164,102]; //Green
+//let BG = [204,164,160] // Oyster Pink
+
+// Here go my if statements parameters 
+let flipBAU =  true; //flip BAU
+let flipHAUS = true; // flip HAUS
+
+let cornerColor = 1; // changes colour of corners
+// 1=blue 2=yellow 3=red 4=black 5=white 6=not appear
+
+let csize = 100; // 60 
+//Circle size 
+
+let symbolMode = 2; //switched between square symbols
+// 1 = Funky, 2 = Cool
+
+
+function setup_wallpaper(pWallpaper) {
+//pWallpaper.output_mode(DEVELOP_GLYPH);
+pWallpaper.output_mode(GRID_WALLPAPER);
+//pWallpaper.output_mode(GLIDE_WALLPAPER);
+
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = cellWidth;
+  pWallpaper.grid_settings.cell_height = cellHeight;
+  pWallpaper.grid_settings.row_offset  = offset;
 }
